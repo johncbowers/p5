@@ -409,6 +409,16 @@ def cone(
     geom.matrix = matrix.scale_transform(radius, height, radius)
     return geom
 
+@_draw_on_return
+def line3d(
+    x1: float = 0, y1: float = 0, z1: float = 0,
+    x2: float = 1, y2: float = 0, z2: float = 0
+):
+    geom = Geometry(1, 1)
+    geom.vertices.append([x1, y1, z1])
+    geom.vertices.append([x2, y2, z2])
+    geom.edges.append([0,1])
+    return geom
 
 @_draw_on_return
 def torus(
